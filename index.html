@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Wizard 🧙‍♂️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-purple': '#6a5acd',
+                        'brand-lavender': '#e6e6fa',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-center p-4 font-sans">
+    <div class="container mx-auto max-w-4xl bg-white shadow-2xl rounded-2xl p-8 animate__animated animate__fadeIn">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-brand-purple mb-4 animate__animated animate__pulse">
+                🔮 Sorting Sorcery 🔮
+            </h1>
+            <p class="text-gray-600 text-lg">Transform your chaotic data into perfectly ordered magic!</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-brand-lavender/50 p-6 rounded-xl hover-lift">
+                <h2 class="text-2xl font-semibold text-brand-purple mb-4">
+                    🧙‍♂️ Sort Your Data
+                </h2>
+                <div class="space-y-4">
+                    <input 
+                        type="text" 
+                        id="data-input" 
+                        placeholder="Enter comma-separated numbers" 
+                        class="w-full p-3 border-2 border-brand-purple/30 rounded-lg focus:ring-2 focus:ring-brand-purple/50 transition duration-300"
+                    >
+                    <select 
+                        id="sort-select" 
+                        class="w-full p-3 border-2 border-brand-purple/30 rounded-lg focus:ring-2 focus:ring-brand-purple/50 transition duration-300"
+                    >
+                        <option value="heap_sort">Heap Sort 🌳</option>
+                        <option value="quick_sort">Quick Sort ⚡</option>
+                        <option value="merge_sort">Merge Sort 🔀</option>
+                        <option value="radix_sort">Radix Sort 📊</option>
+                        <option value="bucket_sort">Bucket Sort 🪣</option>
+                    </select>
+                    <button 
+                        id="execute-sort-btn" 
+                        class="w-full bg-brand-purple text-white py-3 rounded-lg hover:bg-purple-700 transition duration-300 transform hover:scale-105 active:scale-95"
+                    >
+                        Cast Sorting Spell ✨
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-brand-lavender/50 p-6 rounded-xl hover-lift">
+                <h2 class="text-2xl font-semibold text-brand-purple mb-4">
+                    📜 Sorting Scroll
+                </h2>
+                <pre 
+                    id="sort-result" 
+                    class="bg-white border-2 border-brand-purple/20 p-4 rounded-lg min-h-[200px] overflow-auto text-gray-700"
+                >
+Sorting result will manifest here...
+                </pre>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-brand-lavender/50 p-6 rounded-xl hover-lift">
+            <h2 class="text-2xl font-semibold text-brand-purple mb-4">
+                📊 Sorting Chronicles
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="w-full bg-white rounded-lg shadow-md">
+                    <thead class="bg-brand-purple text-white">
+                        <tr>
+                            <th class="p-3 text-left">Spell Type</th>
+                            <th class="p-3 text-left">Raw Essence</th>
+                            <th class="p-3 text-left">Transformed Result</th>
+                            <th class="p-3 text-left">Magical Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="operations-body" class="divide-y divide-gray-200">
+                        <!-- Magical sorting operations will be inscribed here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer class="mt-8 text-center text-gray-500">
+        <p>✨ Crafted with magic and care ✨</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
